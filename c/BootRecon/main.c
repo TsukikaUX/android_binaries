@@ -17,6 +17,9 @@
 #include <tsukika.h>
 #include <libgen.h>
 
+// a new variable for logging. please ignore it.
+char *codenameForThisBinary = "BootRecon";
+
 // used for monitoring battery percentage.
 char *batteryPercentageBlobFilePaths[] = {NULL};
 

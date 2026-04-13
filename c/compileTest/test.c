@@ -16,6 +16,7 @@
 //
 #include <tsukika.h>
 #include <tsukika_props.h>
+char *codenameForThisBinary = "wizaaaard";
 char *batteryPercentageBlobFilePaths[] = {NULL};
 char *const resetprop = NULL;
 char *LOGFILE = "hua";
