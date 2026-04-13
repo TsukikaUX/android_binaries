@@ -17,6 +17,9 @@
 #include <tsukika.h>
 #include <libgen.h>
 
+// current init state, as given by the argv[1].
+int currentState = 0;
+
 // a new variable for logging. please ignore it.
 char *codenameForThisBinary = "BootRecon";
 
@@ -24,7 +27,7 @@ char *codenameForThisBinary = "BootRecon";
 char *batteryPercentageBlobFilePaths[] = {NULL};
 
 // resetprop. *AHEM*
-char *const resetprop = "resetprop";
+char *const resetprop = "/system/bin/resetprop";
 
 // logfile.
 char *LOGFILE = "/data/system/tsukika.log";

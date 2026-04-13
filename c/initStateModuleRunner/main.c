@@ -16,6 +16,9 @@
 //
 #include <tsukika.h>
 
+// current init state, as given by the argv[1].
+int currentState = 0;
+
 // a new variable for logging. please ignore it.
 char *codenameForThisBinary = "initStateModuleRunner"
 
@@ -32,6 +35,21 @@ char *LOGFILE = "/data/system/tsukika.log";
 bool useStdoutForAllLogs = false;
 
 int main(int argc, char **argv)
-{
-    
+{ 
+    if(argc < 2) 
+    {
+        consoleLog(LOG_LEVEL_ERROR, "main", "No state provided.");
+        return 1;
+    }
+    if(strcmp(argv[1], "init") == 0) currentState = INIT;
+    else if(strcmp(argv[1], "late-fs") == 0) currentState = LATE_FS;
+    else if(strcmp(argv[1], "post-fs") == 0) currentState = POST_FS;
+    else if(strcmp(argv[1], "post-fs-data") == 0) currentState = POST_FS_DATA;
+    else if(strcmp(argv[1], "boot-completed") == 0) currentState = BOOT_COMPLETED;
+    else 
+    {
+        consoleLog(LOG_LEVEL_ERROR, "main", "Unknown state, can't load up any modules.");
+        return 1;
+    }
+    listModulesAndVerifyThem();
 }
