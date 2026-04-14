@@ -17,9 +17,6 @@
 #include <tsukika.h>
 #include <libgen.h>
 
-// current init state, as given by the argv[1].
-int currentState = 0;
-
 // a new variable for logging. please ignore it.
 char *codenameForThisBinary = "BootRecon";
 

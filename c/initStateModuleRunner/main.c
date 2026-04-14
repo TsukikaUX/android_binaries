@@ -14,13 +14,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
-#include <tsukika.h>
+#include <tsukika_modules.h>
 
 // current init state, as given by the argv[1].
 int currentState = 0;
 
 // a new variable for logging. please ignore it.
-char *codenameForThisBinary = "initStateModuleRunner"
+char *codenameForThisBinary = "initStateModuleRunner";
 
 // used for monitoring battery percentage.
 char *batteryPercentageBlobFilePaths[] = {NULL};
